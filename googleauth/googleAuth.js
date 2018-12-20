@@ -85,14 +85,19 @@ function timer()
         
         setInterval(timer, 1000);
     });
+var userId = 2018;
+var password = 123;
 
-function verify(){
-     $.ajax({
-            type:'GET',
-            url:"googleAuth.php",
-            data:{text:oneTimeCode},
-            success: function(data){
-            }
-    }); 
+function verifyAccount(){
+    if($('#userid').val()==userId && $('#password').val()==password){
+        if($('#vcode').val()==oneTimeCode){
+            window.location.href = "./admin_page.html";
+        }
+        else{
+            alert("Invalid digit");
+        }
+    }
+    else{
+        alert("Invalid account");
+    }
 }
-

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Goole Authenticator</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link rel="stylesheet" type="text/css" href="googleAuth.css">
+</head>
+
+ <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<!-- popper.min.js 用于弹窗、提示、下拉菜单 -->
+<script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+<!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+<script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<!-- 谷歌认证器-->
+<script src="googleAuth.js"></script>
+<!-- sha-->
+<script src="sha.js"></script>
+
+<body>
+<div class="container">
+	<h1 class="text-center">Welcome!</h1>
+	<hr>
+	<form class="form-signin">
+		<h2 class="form-signin-heading">Sign in</h2>
+		<input id="userid" name="userid" type="text" class="input-block-level" placeholder="User ID">
+		<input id="password" name="password" type="password" class="input-block-level" placeholder="Password">
+		<input name="vcode" id="vcode" type="text" class="input-block-level" placeholder="
+6-digit code">
+		<br>
+		<button type="button" class="btn btn-large btn-success" id="sign_in" name="sign_in" onclick="verifyAccount()">Sign in</button>  
+	</form>
+		<form class="form-signin">
+		<form>
+                <fieldset>
+                     <!-- <div class="clearfix">	
+                        <label for="secret">Secret</label>
+                        <div class="input"><input type="text" size="30" name="secret" id="secret" class="xlarge" value="JBSWY3DPEHPK3PXP" /></div>
+                    </div> -->
+             
+                    <div class="clearfix">
+                        <label>QR Code</label>  
+                        <div class="input"><img id="qrImg" src="" /></div>
+                    </div>
+                 
+                    <!-- <div class="clearfix">
+                        <label>One-time Password</label>
+                        <div class="input"><span class="label label-primary" id='otp' name='otp'></span></div>
+                    </div>
+     -->
+                    <!-- <div class="clearfix">
+                        <label>Updating in</label>
+                        <div class="input"><span id='updatingIn'></span></div>
+                    </div> -->
+                </fieldset>
+                </form>
+		
+	</form>
+	<hr>
+
+
+</div>
+</body>
+</html>
