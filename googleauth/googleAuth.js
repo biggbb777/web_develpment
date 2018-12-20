@@ -38,8 +38,8 @@ function dec2hex(s) { return (s < 15.5 ? '0' : '') + Math.round(s).toString(16);
         shaObj.setHMACKey(key, "HEX");
         shaObj.update(time);
         var hmac = shaObj.getHMAC("HEX");
-
-        $('#qrImg').attr('src', 'https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=200x200&chld=M|0&cht=qr&chl=otpauth://totp/Bryanlovesyou%3Fsecret%3D' + $('#secret').val());
+        var organ = $('#newUserId').val();
+        $('#qrImg').attr('src', 'https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=200x200&chld=M|0&cht=qr&chl=otpauth://totp/'+organ+'%3Fsecret%3D' + sk);
         $('#secretHex').text(key);
         $('#secretHexLength').text((key.length * 4) + ' bits'); 
         $('#epoch').text(time);
@@ -85,8 +85,8 @@ function timer()
         
         setInterval(timer, 1000);
     });
-var userId = 2018;
-var password = 123;
+var userId;
+var password;
 
 function verifyAccount(){
     if($('#userid').val()==userId && $('#password').val()==password){
@@ -100,4 +100,9 @@ function verifyAccount(){
     else{
         alert("Invalid account");
     }
+}
+function addAccount(){
+    userId = $('#newUserId').val();
+    password = $('#newPassword').val();
+    alert("Sign up successfully!");
 }

@@ -21,8 +21,36 @@
 <body>
 <div class="container">
 	<h1 class="text-center">Welcome!</h1>
-	<hr>
+    <hr>
+    <form class="form-signin">
+            <fieldset>
+                
+                <h2 class="form-signin-heading">Sign up</h2>
+                <input id="newUserId" name="newUserId" type="text" class="input-block-level" placeholder="User ID">
+                <input id="newPassword" name="newPassword" type="Password" class="input-block-level" placeholder="Password">
+                <div class="clearfix">
+                    <label>QR Code</label>  
+                    <div class="input"><img id="qrImg" src="" /></div>
+                </div>
+                 <!-- <div class="clearfix">	
+                    <label for="secret">Secret</label>
+                    <div class="input"><input type="text" size="30" name="secret" id="secret" class="xlarge" value="JBSWY3DPEHPK3PXP" /></div>
+                </div> -->
+                <!-- <div class="clearfix">
+                    <label>One-time Password</label>
+                    <div class="input"><span class="label label-primary" id='otp' name='otp'></span></div>
+                </div>
+ -->
+                <!-- <div class="clearfix">
+                    <label>Updating in</label>
+                    <div class="input"><span id='updatingIn'></span></div>
+                </div> -->
+                <br>
+                <button type="button" class="btn btn-large btn-primary" id="sign_up" name="sign_up" onclick="addAccount()">Sign up</button>  
+            </fieldset>	
+    </form>
 	<form class="form-signin">
+        <fieldset>
 		<h2 class="form-signin-heading">Sign in</h2>
 		<input id="userid" name="userid" type="text" class="input-block-level" placeholder="User ID">
 		<input id="password" name="password" type="password" class="input-block-level" placeholder="Password">
@@ -30,33 +58,9 @@
 6-digit code">
 		<br>
 		<button type="button" class="btn btn-large btn-success" id="sign_in" name="sign_in" onclick="verifyAccount()">Sign in</button>  
-	</form>
-		<form class="form-signin">
-		<form>
-                <fieldset>
-                     <!-- <div class="clearfix">	
-                        <label for="secret">Secret</label>
-                        <div class="input"><input type="text" size="30" name="secret" id="secret" class="xlarge" value="JBSWY3DPEHPK3PXP" /></div>
-                    </div> -->
-             
-                    <div class="clearfix">
-                        <label>QR Code</label>  
-                        <div class="input"><img id="qrImg" src="" /></div>
-                    </div>
-                 
-                    <!-- <div class="clearfix">
-                        <label>One-time Password</label>
-                        <div class="input"><span class="label label-primary" id='otp' name='otp'></span></div>
-                    </div>
-     -->
-                    <!-- <div class="clearfix">
-                        <label>Updating in</label>
-                        <div class="input"><span id='updatingIn'></span></div>
-                    </div> -->
-                </fieldset>
-                </form>
+        </fieldset>
+    </form>
 		
-	</form>
 	<hr>
 
 
