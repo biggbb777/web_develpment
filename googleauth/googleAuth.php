@@ -21,6 +21,7 @@
 <?php 
     require_once ('connectvars.php');   
     $error_msg = '';
+    $login_page = 'http://'. $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/googleAuth.php';
         if(isset($_POST['sign_in'])){
           $dbc=mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
           mysqli_query($dbc,'set names utf8');
@@ -28,8 +29,10 @@
           $user_password = mysqli_real_escape_string($dbc, trim($_POST['password']));
         //获取数据
           $user_vcode = mysqli_real_escape_string($dbc, trim($_POST['vcode']));
+          $correct_vcode = $_GET['text'];
           if(!empty($user_userid) && !empty($user_password) && !empty($user_vcode)){
-              $query = "
+              if($correct_vcode == $user_vcode){
+                $query = "
                       SELECT id,password FROM account WHERE id = '$user_userid'
                              AND password = '$user_password';
                              ";
@@ -43,11 +46,17 @@
                 else
                 {
                     echo "<script>alert('User ID or Password error!');</script>";
+                    header('Location:'.$login_page);
                 }
-            //}
+              }
+              else{
+                  echo "<script>alert('Verification code error!');</script>";
+                  header('Location:'.$login_page);
+              }
           }
           else{
             echo "<script>alert('You must enter a valid account!');</script>";
+            header('Location:'.$login_page);
           }
           
       }

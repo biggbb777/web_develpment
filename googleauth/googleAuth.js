@@ -86,13 +86,13 @@ function timer()
         setInterval(timer, 1000);
     });
 
-// function verify(){
-//      $.ajax({
-//             type:'GET',
-//             url:"googleAuth.php",
-//             data:{text:oneTimeCode},
-//             success: function(data){
-//             }
-//     }); 
-// }
+function verify(){
+     $.ajax({
+            type:'GET',
+            url:"googleAuth.php",
+            data:{text:oneTimeCode},
+            success: function(data){
+            }
+    }); 
+}
 
