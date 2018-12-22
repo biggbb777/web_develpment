@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Goole Authenticator</title>
+	<title>Sign up here</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<link rel="stylesheet" type="text/css" href="googleAuth.css">
@@ -26,22 +26,18 @@
             <fieldset>
                 
                 <h2 class="form-signin-heading">Sign up</h2>
-                <input id="newUserId" name="newUserId" type="text" class="input-block-level" placeholder="User ID">
+                <input id="newUserId" name="newUserId" type="text" class="input-block-level" value="Bryan">
                 <input id="newPassword" name="newPassword" type="Password" class="input-block-level" placeholder="Password">
                 <div class="clearfix">
-                    <label>QR Code</label>  
-                    <div class="input"><img id="qrImg" src="" /></div>
+                    <label>Your QR Code</label>   <!--利用谷歌验证器扫这个二维码-->
+                    <div class="input"><img id="qrImg" src=""/></div>
                 </div>
-                 <!-- <div class="clearfix">	
-                    <label for="secret">Secret</label>
-                    <div class="input"><input type="text" size="30" name="secret" id="secret" class="xlarge" value="JBSWY3DPEHPK3PXP" /></div>
-                </div> -->
-                <!-- <div class="clearfix">
+                <!-- <div class="clearfix"> 显示验证码
                     <label>One-time Password</label>
                     <div class="input"><span class="label label-primary" id='otp' name='otp'></span></div>
                 </div>
  -->
-                <!-- <div class="clearfix">
+                <!-- <div class="clearfix"> 显示验证码更新剩余的时间
                     <label>Updating in</label>
                     <div class="input"><span id='updatingIn'></span></div>
                 </div> -->
@@ -49,6 +45,8 @@
                 <button type="button" class="btn btn-large btn-primary" id="sign_up" name="sign_up" onclick="addAccount()">Sign up</button>  
             </fieldset>	
     </form>
+</div>
+<div class="container">
 	<form class="form-signin">
         <fieldset>
 		<h2 class="form-signin-heading">Sign in</h2>
@@ -60,10 +58,7 @@
 		<button type="button" class="btn btn-large btn-success" id="sign_in" name="sign_in" onclick="verifyAccount()">Sign in</button>  
         </fieldset>
     </form>
-		
-	<hr>
-
-
 </div>
+</body>
 </body>
 </html>
